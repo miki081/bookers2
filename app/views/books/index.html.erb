@@ -1,0 +1,10 @@
+<%= render 'users/list', users: @users %>
+
+<h2>Books</h2>
+ <tbody>
+     <tr>
+        <%= image_tag('no_image.jpg') "/users/" %>
+        <td><%=link_to @book.title, "/books/" %></td>
+        <td><%=@book.body %></td>
+     </tr>
+ </tbody>

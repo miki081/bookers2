@@ -1,0 +1,20 @@
+<%= render 'users/list', users: @users %>
+<h1>Books 2</h1>
+
+
+  <thead>
+    <tr>
+       <% @books.each do |book| %>
+       <td><%= link_to "/users/" do %> 
+           <%= image_tag ('no_image.jpg') %>
+           <% end %>
+       <th>Title</th>
+       <th>Opinion</th>
+         <td><%=link_to book.title, "/books/#{@user.id}" %></td>
+         <td><%=@book.body %>
+         </td>
+         <th colspan= "3"></th>
+        <% end %>
+    </tr>
+  </thead>
+
