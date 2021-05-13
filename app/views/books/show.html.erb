@@ -1,11 +1,30 @@
-<%= render 'users/list', users: @users %>
- <h2>Book detail 2</h2>
+<html>
+<%= render 'homes/list', homes: @homes %>
+<main>
+ <p id="notice"></p>
+   <div class='container px-5 px-sm-0'>
+    <div class='row'>
+     <div class='col-md-3'>
+       <%= render 'users/list', users: @users %>
+     </div>
+<div class='col-md-8 offeset -md-1'>
+ <h2>Book detail</h2>
+ <table class='table table-hover table-inverse'>
+     <tr>
+       <th></th>
+       <th>Title</th>
+       <th>Opinion</th>
+       <th colspan="3"></th>
+     </tr>
+  </thead>
  <tbody>
     <tr>
-       <td><%=link_to @user.name,"/users/#{@user.id}" %></td>
+       <td><a><%= image_tag('no_image.jpg') %></br><%=link_to @user.name,"/users/#{@user.id}" %></a>
+       </td>
        <td><%=link_to @book.title, "/books/#{@book.id}" %></td>
        <td><%=@book.body %></td>
        <td><%= link_to 'Edit', edit_book_path(@book) %></td>
        <td><%= link_to 'Destroy', @book , method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
  </tbody>
+</html>

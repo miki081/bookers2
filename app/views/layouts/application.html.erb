@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <header>
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-  <% if user_signed_in? %>
-    <li class="nav-item">
-      <%= link_to "home", "/", method: :delete %>
-    </li>
-   <li class="nav-item">
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-    </li>
-    
-    
-  <% end %>
- </body>
-    <%= yield %>
+  </header>
+ <body class="d-flex flex-column vh-100">
+          
+           </ul>
+          </div>
+        </div>
+      </nav>
+  </body>
+ <%= yield %>
 </html>
