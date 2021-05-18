@@ -1,38 +1,37 @@
-<!DOCTYPE html>
 <html>
 <%= render 'homes/list', home: @home %>
 <main>
-<p id="notice">Welcome! You have signed up </p>
+ <p id="notice"></p>
    <div class='container px-5 px-sm-0'>
     <div class='row'>
      <div class='col-md-3'>
        <%= render 'users/list', user: @user %>
      </div>
-<div class='col-md-8 offeset -md-1'>
-<h1>Books</h1>
+  <div class='col-md-8 offeset -md-1'>
+ <h2>Users</h2>
  <table class='table table-hover table-inverse'>
-  <thead>
      <tr>
-       <th></th>
-       <th>Title</th>
-       <th>Opinion</th>
+       <th>image</th>
+       <th>name</th>
        <th colspan="3"></th>
      </tr>
   </thead>
   <tbody>
-     <% @books.each do |book| %>
-     <tr>
-        <td><%= image_tag ('no_image.jpg') %><a>
-        <td><%=link_to book.title, book_path(book.id) %></td>
-        <td><%= book.body %></td>
-     </tr>
-     <% end %>
-   </thead>
-  </tbody>
- </table>
+    <% @users.each do |user| %>
+    <tr>
+       <td><%= image_tag('no_image.jpg') %></td>
+       <td><%= user.name %></td>
+       <td><%= link_to 'Show', user_path(@user) %></td>
+    </tr>
+    <% end %>
+ </tbody>
+  </table>
+  
+    </div>
+  </div>
 </div>
-</main>
-  <footer>
+      </main>
+    <footer>
   <div class='container mt-5'>
   	<div class='row'>
     	<div class='mx-auto'>
@@ -41,7 +40,6 @@
     </div>
   </div>
 </footer>
- </body>
+
+  </body>
 </html>
-
-

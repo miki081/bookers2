@@ -1,13 +1,37 @@
+<html>
+<%= render 'homes/list', homes: @homes %>
+ <main>
+        <p id="notice"></p>
+        <div class='container'>
+  <div class='row'>
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h1>Editing Book</h1>
 <%= form_with model:p, url:"/books/#{@book.id}", local:true do |f| %>
-  <h4>Title</h4>
+ <div class="form-group">
+    <label for="book_title">Title</label>
+  </div>
   <%= f.text_field :title %>
-  <h4>Opinion</h4>
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+  </div>
   <%= f.text_area :body %>
-  <%= f.submit 'Update Books' %>
+  <div class="form-group">
+   <%= f.submit 'Update Books' %>
+  </div>
 <% end %>
 
 <%= link_to 'Show', book_path %> |
 <%= link_to 'Back', books_path %>
+</main>
+ <footer>
+<div class='container mt-5'>
+ <div class='row'>
+     <div class='mx-auto'>
+        <a>CopyRight Infratop.inc</a>
+     </div>
+    </div>
+   </div>
+ </footer>
 
-<footer>CopyRight Infratop.inc</footer>
+  </body>
+</html>
