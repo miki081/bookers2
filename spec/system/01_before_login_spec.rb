@@ -8,7 +8,7 @@ describe '[STEP1] ユーザログイン前のテスト' do
 
     context '表示内容の確認' do
       it 'URLが正しい' do
-        expect(current_path).to eq '/'
+        expect(current_path).to eq '/users/sign_in'
       end
       it 'Log inリンクが表示される: 左上から5番目のリンクが「Log in」である' do
         log_in_link = find_all('a')[5].native.inner_text
@@ -31,12 +31,12 @@ describe '[STEP1] ユーザログイン前のテスト' do
 
   describe 'アバウト画面のテスト' do
     before do
-      visit '/home/about'
+      visit '/homes/about'
     end
 
     context '表示内容の確認' do
       it 'URLが正しい' do
-        expect(current_path).to eq '/home/about'
+        expect(current_path).to eq '/homes/about'
       end
     end
   end
