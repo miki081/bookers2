@@ -1,35 +1,43 @@
-<html>
- <head>
-  <meta charset="UTF-8" />
-  <script src="https://kit.fontawesome.com/01a0f06759.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<%= render 'homes/list', home: @home %>
 <main>
-   　<div class='container px-5 px-sm-0'>
-    <div class='row'>
-     <div class='col-md-3'>
-       <%= render 'users/list', user: @user %>
-     </div>
-<div class='col-md-8 offeset -md-1'>
- <h2>Book detail</h2>
- <table class='table table-hover table-inverse'>
-     <tr>
-       <th></th>
-       <th>Title</th>
-       <th>Opinion</th>
-       <th colspan="3"></th>
-     </tr>
-  </thead>
- <tbody>
+<p id="notice"></p>
+ <div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+       <%= render 'users/list', user: @user, book: @book_new %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+  		<h2>Book detail</h2>
+  	 <table class='table table-hover table-inverse'>
+     <!--<tr>-->
+     <!--  <th></th>-->
+     <!--  <th>Title</th>-->
+     <!--  <th>Opinion</th>-->
+     <!--  <th colspan="3"></th>-->
+     <!--</tr>-->
+    <tbody>
     <tr>
-       <td><a><%= image_tag('no_image.jpg') %></br><%=link_to @user.name,"/users/#{@user.id}" %></a>
-       </td>
+       <td><%=link_to image_tag(src= 'no_image.jpg', class: @user), user_path(@user) %></br><%=link_to @user.name,"/users/#{@user.id}" %></td>
        <td><%=link_to @book.title, "/books/#{@book.id}" %></td>
        <td><%=@book.body %></td>
-       <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_35605" %></td>
-       <td><%= link_to 'Destroy', @book , method: :delete, class: "btn btn-sm btn-danger destroy_book_35570", data: { confirm: 'Are you sure?' } %></td>
+        <% if @user.id == current_user.id %>
+        <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_35605" %></td>
+        <td><%= link_to 'Destroy', book_path(@book) , method: :delete, class: "btn btn-sm btn-danger destroy_book_35570", data: { confirm: '本当に消しますか？' } %></td>
+        <% end %>
     </tr>
- </tbody>
-</html>
+    </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+</main>
+    <footer>
+  <div class='container mt-5'>
+  	<div class='row'>
+    	<div class='mx-auto'>
+    		<p>CopyRight Infratop.inc</p>
+    	</div>
+    </div>
+  </div>
+</footer>
+

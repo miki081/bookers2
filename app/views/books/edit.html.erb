@@ -1,11 +1,8 @@
-<html>
-<%= render 'homes/list', homes: @homes %>
  <main>
-        <p id="notice"></p>
-        <div class='container'>
-  <div class='row'>
-<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-<h1>Editing Book</h1>
+  <p id="notice"></p>
+  <div class="container">
+   <div class= "col-sm-12 col-md-8 col-lg-5 px-sm-0 mx-auto">
+    <h1>Editing Book</h1>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>
   <% @book.errors.full_messages.each do |message| %>error prohibited this obj from being saved
@@ -22,13 +19,15 @@
   </div>
   <%= f.text_area :body %>
   <div class="form-group">
-   <%= f.submit 'Update Books' %>
+   <button class="btn btn-success">Update Books</button>
   </div>
 <% end %>
-
-<%= link_to 'Show', book_path %> |
-<%= link_to 'Back', books_path %>
+ <%= link_to 'Show', book_path %> |
+ <%= link_to 'Back', books_path %>
+  </div>
+ </div>
 </main>
+ 
  <footer>
 <div class='container mt-5'>
  <div class='row'>
@@ -38,6 +37,3 @@
     </div>
    </div>
  </footer>
-
-  </body>
-</html>
